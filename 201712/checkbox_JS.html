@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>checkbox_JS test</title>
+</head>
+<body>
+
+    JS請寫在頁面底下，Jquery方式寫底下功能
+    <ul>
+        <li>請引入 Jquery library，並用Jqery方式撰寫，寫在html頁面上即可</li>
+        <li>需要有 全選/清除 checkbox 功能</li>
+        <li>點選 level 1 checkbox ，該項目底下也一併 全選/清除(不影響其他checkbox)</li>
+    </ul>
+
+
+
+        <fieldset>
+            <label><input type="checkbox" id="checkAll"/> Check all</label>
+            <ol>
+                <li>
+                    <label><input type="checkbox"/> level 1</label>
+                    <ul>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox"/> level 1</label>
+                    <ul>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox"/> level 1</label>
+                    <ul>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                        <li><label><input type="checkbox"/> level 2 - Option 1</label></li>
+                    </ul>
+                </li>
+            </ol>
+
+        </fieldset>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $('fieldset').on('click', 'input[type="checkbox"]', function () {
+        var $el = $(this);
+        $el.parent('label').parent().find('input[type="checkbox"]').prop('checked', $el.prop('checked'));
+    })
+</script>
+</html>
+

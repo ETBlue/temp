@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="test.css">
+    <title>CSS test</title>
+</head>
+<body>
+
+<section id="receive-money">
+    <header class="section">
+        <h1>
+            跟誰收款
+        </h1>
+    </header>
+    <article>
+        <div class="item section">
+            <div class="info">
+                <div class="content">
+                    我<br />
+                    應收金額 1,000,000 元
+                </div>
+                <div class="aside">
+                    <span class="status" data-state="na">
+                        免收款
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="item section">
+            <div class="info">
+                <div class="content">
+                    我是王小明<br />
+                    應收金額 1,000,000 元
+                </div>
+                <div class="aside">
+                    <span class="status" data-state="done">
+                        已收款
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="item section">
+            <div class="info">
+                <div class="content">
+                    我是周大華<br />
+                    應收金額 1,000,000 元
+                </div>
+                <div class="aside">
+                    <span class="status" data-state="todo">
+                        未入帳
+                    </span>
+                </div>
+            </div>
+            <div class="manage">
+                <div class="toggle">
+                    <button data-state="inactive">
+                        <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="content collapse">
+                    變更收款狀態
+                    <div class="options">
+                        <label class="radio-inline">
+                            <input type="radio" name="status">
+                            已經收款
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="status">
+                            放棄收款
+                        </label>
+                    </div>
+                    <hr />
+                    通知
+                    <div class="options">
+                        <button class="notify">
+                            <img src="line.png">
+                        </button>
+                        <button class="notify">
+                            <img src="sms.png">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+<section id="terminate">
+    <button>
+        終止活動
+    </button>
+</section>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="test.js"></script>
+</html>
+

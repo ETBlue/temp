@@ -1,0 +1,183 @@
+:root {
+  /* TODO: 問 PM 是否需要支援 IE */
+  --background-color: #f5f5f5;
+  --divider-color: #ededed;
+  --divider-color-header: #e0e0e0;
+  --button-color: #ff830f;
+  --button-color-light: #ffdab2;
+  --label-color-done: #00b8cc;
+  --label-color-todo: #ff0007;
+}
+
+/* base rules */
+body {
+  background-color: var(--background-color);
+  color: #333;
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 1.5em;
+  padding: 1rem;
+}
+h1 {
+  margin: 0 0 -1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+hr {
+  border-color: #d7d7d7;
+  margin: 1rem 0;
+}
+input, button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+input[type="radio"]:focus, button:focus {
+  outline: none;
+}
+button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+/* layout rules */
+#receive-money {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+#terminate {
+  text-align: center;
+  padding: 2.25rem 0;
+}
+
+/* module rules */
+.section {
+  padding: 2rem;
+}
+header.section {
+  border-bottom: 1px var(--divider-color-header) solid;
+}
+.item.section {
+  border-bottom: 1px var(--divider-color) solid;
+}
+.item.section:last-child {
+  border-bottom: none;
+}
+.item.section > .info {
+  display: flex;
+}
+.item.section > .info > .content {
+  flex: auto;
+}
+.item.section > .info > .aside {
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.item.section > .info > .aside > .status {
+  font-size: 0.8em;
+  line-height: 1em;
+  padding: 0.3em;
+}
+.manage {
+  position: relative;
+  margin: 2.25rem -2rem -2rem -2rem;
+}
+.manage > .toggle {
+  position: absolute;
+  top: -2.25rem;
+  left: 0;
+  right: 0;
+  height: 2.25rem;
+  text-align: center;
+  overflow: hidden;
+}
+.manage > .toggle > button {
+  display: inline-block;
+  color: var(--button-color);
+  border-radius: 4rem;
+}
+.manage > .toggle > button > .glyphicon {
+  font-size: 1rem;
+  margin: 0 1.2em 2.4em 1.2em;
+}
+.manage > .content {
+  background-color: var(--background-color);
+  padding: 1.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+}
+.manage > .content > .options {
+  /* TODO: 問設計師想要置中或靠左 */
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.manage > .content > .options .radio-inline {
+  margin: 0.5rem 2rem 0 2rem;
+}
+.manage > .content > .options .radio-inline input[type="radio"] {
+  width: 1.5em;
+  height: 1.5em;
+  top: -0.25em;
+  margin-left: -2em;
+  background-color: #fff;
+  background-image: none;
+  border: 2px #acadae solid;
+  border-radius: 1em;
+}
+.manage > .content > .options .radio-inline input[type="radio"]:checked {
+  /* TODO: 問設計師想要的樣式 */
+  background-color: var(--button-color);
+  border-color: var(--button-color-light);
+}
+.manage > .content > .options .notify {
+  margin: 0 3rem;
+  padding: 0;
+}
+.manage > .content > .options .notify > img {
+  width: 4rem;
+}
+#terminate button {
+  background-color: var(--button-color);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5em;
+  width: 80%;
+  padding: 0.4em;
+  border-radius: 2em;
+  border: 1px rgba(0,0,0,0) solid;
+}
+
+/* state rules */
+.item.section .status[data-state="na"] {
+  background-color: var(--background-color);
+  color: #aaa;
+}
+.item.section .status[data-state="done"] {
+  background-color: var(--label-color-done);
+  color: #fff;
+}
+.item.section .status[data-state="todo"] {
+  background-color: var(--label-color-todo);
+  color: #fff;
+}
+.manage > .toggle > button[data-state="inactive"] {
+  background-color: var(--background-color);
+}
+.manage > .toggle > button[data-state="active"] {
+  background-color: var(--button-color-light);
+}
+.manage > .toggle > button[data-state="inactive"] > .glyphicon-menu-up {
+  display: none;
+}
+.manage > .toggle > button[data-state="active"] > .glyphicon-menu-down {
+  display: none;
+}
+#terminate button:active {
+  /* TODO: 問設計師想要的樣式 */
+  border-color: var(--button-color-light);
+}
